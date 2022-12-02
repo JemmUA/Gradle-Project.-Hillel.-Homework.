@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+}
+
+group 'ua.ithillel'
+version '1.0.1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    // https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core
+    implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: '10.1.2'
+    // https://mvnrepository.com/artifact/io.gravitee.am.model/gravitee-am-model
+    implementation group: 'io.gravitee.am.model', name: 'gravitee-am-model', version: '3.19.3'
+    // https://mvnrepository.com/artifact/za.co.absa.commons/commons
+    implementation group: 'za.co.absa.commons', name: 'commons_2.13', version: '1.3.2'
+    // https://mvnrepository.com/artifact/io.joern/x2cpg
+    implementation group: 'io.joern', name: 'x2cpg_3', version: '1.1.1312'
+}
+
+test {
+    useJUnitPlatform()
+}
